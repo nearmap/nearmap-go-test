@@ -1,8 +1,7 @@
 # nearmap.com Go Test
 
-Welcome to the [nearmap.com](nearmap.com) Go test. The purpose of this
-assignment is to test your familiarity with Go, distributed systems concepts and
-unit testing.
+Welcome to the Nearmap Go test. The purpose of this assignment is to test your
+familiarity with Go, distributed systems concepts and unit testing.
 
 ## Background
 
