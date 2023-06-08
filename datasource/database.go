@@ -1,22 +1,39 @@
 package datasource
 
-import "time"
+import (
+	"sync"
+	"time"
+)
 
 type Database struct {
-	data map[string]interface{}
+	mutex sync.Mutex
+	data  map[string]any
 }
 
-func (db *Database) Value(key string) (interface{}, error) {
-	// simulate 500ms roundtrip to the distributed cache
-	time.Sleep(500 * time.Millisecond)
-
-	return db.data[key], nil
+func NewDatabase(initialState map[string]any) *Database {
+	return &Database{
+		data: initialState,
+	}
 }
 
-func (db *Database) Store(key string, value interface{}) error {
-	// simulate 500ms roundtrip to the distributed cache
+func (db *Database) Value(key string) (any, error) {
+	// simulate 500ms roundtrip to the database
 	time.Sleep(500 * time.Millisecond)
 
+	db.mutex.Lock()
+	result := db.data[key]
+	db.mutex.Unlock()
+
+	return result, nil
+}
+
+func (db *Database) Store(key string, value any) error {
+	// simulate 500ms roundtrip to the database
+	time.Sleep(500 * time.Millisecond)
+
+	db.mutex.Lock()
 	db.data[key] = value
+	db.mutex.Unlock()
+
 	return nil
 }
