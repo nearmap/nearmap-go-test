@@ -1,7 +1,14 @@
-# nearmap.com Go Test
+# Nearmap Go Test (Code Review Version)
 
-Welcome to the Nearmap Go test. The purpose of this assignment is to test your
-familiarity with Go, distributed systems concepts and unit testing.
+Instructions for the standard Nearmap Go test are provided below.
+
+For this exercise, a full solution has been provided (there is no need to
+provide any code yourself). However, we would like you to review the code so
+that we can have an in-depth technical discussion around the solution and how
+it can be improved.
+
+The purpose of this assignment is to test your familiarity with Go, distributed
+systems concepts and unit testing.
 
 ## Background
 
